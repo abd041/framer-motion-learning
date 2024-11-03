@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { motion , AnimatePresence } from 'framer-motion';
 
 const Order = ({ pizza }) => {
-  const[showtitle ,setshowTitle]=useState(false)
+  const[showtitle ,setshowTitle]=useState(true)
    setTimeout(()=>{
-    setshowTitle(true)
+    setshowTitle(false)
    }, 4000)
   return (
     <div className="container order">
