@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion , AnimatePresence } from 'framer-motion';
 
-const Order = ({ pizza }) => {
+const Order = ({ pizza , setShowModal}) => {
   const[showtitle ,setshowTitle]=useState(true)
-   setTimeout(()=>{
+   
+  useEffect(()=>{
+    setTimeout(() => {
+      setShowModal(true)
+    }, 5000);
+  },[setShowModal])
+  
+  setTimeout(()=>{
     setshowTitle(false)
    }, 4000)
+
+
   return (
     <div className="container order">
 
