@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import "./App.css"
+import { motion } from "motion/react"
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <motion.div className="box"
+      initial={{
+        x:0
+      }}
+      animate={{
+        x:[500, 200 , 1000],
+        y:[0, 200 , 0],
+        transition:{duration:2, delay:1 , repeat:2}
+      }}
+      
+      ></motion.div>
+      <motion.div 
+      
+      animate={{
+        x:1000,
+        y:-100,
+        transition:{duration:5 , repeat:2 , ease:"anticipate"}
+      }}
+      className='circle'></motion.div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
